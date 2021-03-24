@@ -104,6 +104,7 @@ var CALENDAR = CALENDAR | (function() {
         calendar.render();
 
         $wrapper.classList.add('ui-calendar-wrapper-show');
+        var $input = document.querySelector(input);
         var left = $input.offsetLeft;
         var top = $input.offsetTop;
         var height = $input.offsetHeight;
@@ -154,6 +155,7 @@ var CALENDAR = CALENDAR | (function() {
             if ($target.tagName.toLowerCase() !== 'td') {
                 return;
             }
+
 
             var date = new Date(monthDate.year, monthDate.month - 1, $target.dataset.date);
 
