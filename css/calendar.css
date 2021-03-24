@@ -93,3 +93,15 @@
     background: #F0F0F0;
     color: #ccc;
 }
+
+.ui-calendar-input {
+    line-height: 24px;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+.ui-calendar-input:focus {
+    outline: 0 none;
+    border: 1px solid #1ABC9C;
+}

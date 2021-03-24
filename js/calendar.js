@@ -10,7 +10,23 @@ var CALENDAR = CALENDAR | (function() {
     calendar.buildUI = function(year, month) {
         monthDate = calendar.getMonthDate(year, month);
 
-        var html = '<div class="ui-calendar-header">' +
+        var html = '<div>' +
+            '<table>' +
+            '<tr>' +
+            '<td><lable>name</lable></td>' +
+            '<td><input class="ui-calendar-input"/></td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td><lable>address</lable></td>' +
+            '<td><input class="ui-calendar-input"/></td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td><lable>tel</lable></td>' +
+            '<td><input class="ui-calendar-input"/></td>' +
+            '</tr>' +
+            '</table>' +
+            '</div>' +
+            '<div class="ui-calendar-header">' +
             '<a href="#" class="ui-calendar-btn ui-calendar-prev-btn">&lt;</a>' +
             '<a href="#" class="ui-calendar-btn ui-calendar-next-btn">&gt;</a>' +
             '<span class="ui-calendar-curr-month">' + monthDate.year + '-' + monthDate.month + '</span>' +
