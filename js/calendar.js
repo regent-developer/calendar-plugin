@@ -88,8 +88,12 @@ var CALENDAR = CALENDAR | (function() {
         calendar.render();
 
         $wrapper.classList.add('ui-calendar-wrapper-show');
-        $wrapper.style.top = '10px';
-        $wrapper.style.left = '100px';
+        var left = $input.offsetLeft;
+        var top = $input.offsetTop;
+        var height = $input.offsetHeight;
+
+        $wrapper.style.top = top + height + 8 + 'px';
+        $wrapper.style.left = left + 2 + 'px';
 
         /*
         var $input = document.querySelector(input);
