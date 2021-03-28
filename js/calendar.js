@@ -34,6 +34,8 @@ var CALENDAR = CALENDAR | (function() {
         for (var i = 0; i < monthDate.days.length; i++) {
             var date = monthDate.days[i];
 
+            var lunar = LUNAR_CALENDAR_DATE.solar2lunar(monthDate.year, monthDate.month, date.showDate);
+            console.log(lunar)
             if (i % 7 === 0) {
                 html += '<tr>';
             }
@@ -44,9 +46,9 @@ var CALENDAR = CALENDAR | (function() {
             } else if (date.showDate == today.getDate() &&
                 monthDate.month == today.getMonth() + 1 &&
                 monthDate.year == today.getFullYear()) {
-                html += '<td data-date = ' + date.date + ' class = "on">' + date.showDate + '</td>'
+                html += '<td data-date = ' + date.date + ' class = "on">' + date.showDate + '<br>' + lunar.IDayCn + '</td>'
             } else {
-                html += '<td data-date = ' + date.date + '>' + date.showDate + '</td>'
+                html += '<td data-date = ' + date.date + '>' + date.showDate + '<br>' + lunar.IDayCn + '</td>'
             }
 
             if (i % 7 === 6) {
@@ -88,6 +90,7 @@ var CALENDAR = CALENDAR | (function() {
         calendar.render();
 
         $wrapper.classList.add('ui-calendar-wrapper-show');
+        var $input = document.querySelector(input);
         var left = $input.offsetLeft;
         var top = $input.offsetTop;
         var height = $input.offsetHeight;
